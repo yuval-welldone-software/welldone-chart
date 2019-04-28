@@ -1,0 +1,10 @@
+<div class="header">
+    <h1>Welldone-Chart</h1>
+</div>
+<div class="app-container">
+    <div class="chart"><app-google-chart [provider]="provider"></app-google-chart></div>
+    <div class="dashboard"><app-dashboard (providerChanged)="onProviderChanged($event)"></app-dashboard></div>
+</div>
+<div type="danger" class="container alert alert-danger mt-5" *ngIf="showNotification">
+    <strong>Warning!</strong> {{notification}}
+</div>

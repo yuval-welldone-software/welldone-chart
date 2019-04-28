@@ -1,0 +1,41 @@
+.header{
+    margin-top: 30px;
+    text-align: center;
+}
+.app-container {
+    display: flex;
+    width: 100%;    
+}
+.chart{
+    overflow: hidden;
+    flex: 1;    
+    margin-top: 20px;
+}
+.dashboard { 
+    max-width : 300px;
+    min-width : 300px;
+    padding: 20px;
+    /* min-width: 300px; */
+    
+}
+ /* @media (max-width: 2100px) {
+    .chart{
+        flex: 4;    
+    }
+    .dashboard { 
+        flex: 1;    
+    }
+}  */
+
+@media (max-width: 600px) {
+    .app-container {
+        flex-wrap: wrap;
+    }
+    
+    .chart,
+    .dashboard { 
+        overflow: unset;
+        width: 100%;
+        max-width:unset;
+    }
+}

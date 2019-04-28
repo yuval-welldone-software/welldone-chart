@@ -1,0 +1,26 @@
+<div class="form-group">
+  <label for="providerSelect">Provider: </label>
+  <select class="form-control" [(ngModel)]="selectedProviderIndex" (change)="getProviderData($event.target.value)" name="providerSelect">
+    <option *ngFor="let provider of providers; let i = index" [value]="i">
+      {{provider.tableTitle}}
+    </option>                      
+  </select>
+</div>
+<div class="form-group">
+  <ng-container *ngFor="let title of provider.lineTitle; let i = index">
+      <button type="button" (click)="onLineToggle(i)" class="btn btn-block" [ngClass]=" {'btn-outline-primary' : provider.linesToggle[i],  'btn-outline-secondary' : !provider.linesToggle[i] }">{{title}}</button>
+  </ng-container>
+</div>
+<div class="form-group">
+  <label for="dataPointSelect">Data Points: </label>
+  <select class="form-control" [(ngModel)]="provider.dataPoint" (change)="onProviderChanged()" name="dataPointSelect">
+    <option *ngFor="let point of dataPoints" [value]="point.value">
+      {{point.text}}
+    </option>                      
+  </select>
+</div>
+<div class="form-group">
+    <label for="thresholdSelector">Threshold: </label>
+    <input type="number" [(ngModel)]="provider.threshold" class="form-control col-12 form-group"
+    (ngModelChange)="this.thresholdChanged.next($event)" />    
+</div>
