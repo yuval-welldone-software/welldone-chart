@@ -14,7 +14,7 @@ export class ProviderService {
   getProviders(): Provider[] {
     return [
       {
-        tableTitle : 'alphavantage symbol - MSFT last 100 changes with 5 min interval',
+        tableTitle : 'alphavantage',
         url : `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=5min&apikey=demo`,
         xTitle : 'Points',
         yTitle : 'Date',
@@ -33,7 +33,7 @@ export class ProviderService {
           )
       },
       {
-        tableTitle : 'Climatedata Worldbank Israel avarege tempeture 1991-2016',
+        tableTitle : 'worldbank',
         url : `https://climatedata.worldbank.org/climateweb/rest/v1/cru/country/pr/1991-2016/ISR`,
         xTitle : 'Tempeture',
         yTitle : 'Month',
